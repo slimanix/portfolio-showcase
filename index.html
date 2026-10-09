@@ -617,6 +617,7 @@
                 <a href="#projects" class="nav-link">Projets Phares</a>
                 <a href="#skills" class="nav-link">Compétences</a>
                 <a href="#experience" class="nav-link">Parcours</a>
+                <a href="https://malwares-detector.vercel.app/" target="_blank" class="nav-link" style="color: #60a5fa;">🛡️ MalwaresInspector</a>
                 <a href="https://autotailorengine.vercel.app" target="_blank" class="nav-link" style="color: #34d399;">⚡ Auto-Tailor Engine</a>
             </div>
             <a href="#contact" class="nav-cta">Me Contacter</a>
@@ -649,8 +650,11 @@
             <a href="#projects" class="btn btn-primary">
                 <span>🚀</span> <span>Explorer les Projets Live</span>
             </a>
+            <a href="https://malwares-detector.vercel.app/" target="_blank" class="btn btn-secondary" style="border-color: rgba(16,185,129,0.3); color: #34d399;">
+                <span>🛡️</span> <span>MalwaresInspector Live ↗</span>
+            </a>
             <a href="https://autotailorengine.vercel.app" target="_blank" class="btn btn-secondary">
-                <span>⚡</span> <span>Tester Auto-Tailor Engine ↗</span>
+                <span>⚡</span> <span>Auto-Tailor Engine ↗</span>
             </a>
             <a href="https://github.com/slimanix" target="_blank" class="btn btn-secondary">
                 <span>🐙</span> <span>GitHub (slimanix)</span>
@@ -694,7 +698,55 @@
         </div>
 
         <div class="projects-grid">
-            <!-- Project 1 -->
+            <!-- Project 1: MalwaresInspector (AI Deep Learning Cybersecurity) -->
+            <div class="project-card" data-cat="ai fullstack">
+                <div>
+                    <div class="project-badge-row">
+                        <span class="project-type-badge badge-live" style="background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);">🟢 En Production</span>
+                        <span style="font-size: 11px; color: #a78bfa; font-weight: 700;">Deep Learning &amp; Cybersécurité</span>
+                    </div>
+                    <h3 class="project-title">MalwaresInspector — AI-Powered Malware Detection Command Center</h3>
+                    <p class="project-desc">
+                        Système intelligent d'analyse et d'inspection de programmes malveillants basé sur un modèle de <strong>Deep Learning (VGG-16 CNN)</strong> entraîné et fine-tuné sur mesure. Convertit les fichiers et signatures binaires en représentations matricielles pour classifier les menaces cybernétiques avec inférence ultra-rapide TensorFlow Lite (LiteRT) en environnement cloud serverless.
+                    </p>
+                    <div class="project-metrics">
+                        <div class="metric-item">
+                            <div class="m-val">VGG-16</div>
+                            <div class="m-lbl">Fine-Tuned CNN</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="m-val">TFLite</div>
+                            <div class="m-lbl">LiteRT Inference</div>
+                        </div>
+                        <div class="metric-item">
+                            <div class="m-val">&lt; 150ms</div>
+                            <div class="m-lbl">Latence Cloud</div>
+                        </div>
+                    </div>
+                    <div class="project-tech">
+                        <span class="tech-pill">Python</span>
+                        <span class="tech-pill">TensorFlow</span>
+                        <span class="tech-pill">VGG-16 CNN</span>
+                        <span class="tech-pill">ai-edge-litert</span>
+                        <span class="tech-pill">Flask WSGI</span>
+                        <span class="tech-pill">Tailwind CSS</span>
+                        <span class="tech-pill">Vercel</span>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <a href="https://malwares-detector.vercel.app/" target="_blank" class="btn btn-primary" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%);">
+                        <span>🛡️</span> <span>Démo Live ↗</span>
+                    </a>
+                    <button class="btn btn-secondary" onclick="openModal('malwares')">
+                        <span>🔎</span> <span>Modèle &amp; Architecture</span>
+                    </button>
+                    <a href="https://github.com/slimanix/MalwersDetector" target="_blank" class="btn btn-secondary">
+                        <span>🐙</span> <span>GitHub</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
             <div class="project-card" data-cat="fullstack ops">
                 <div>
                     <div class="project-badge-row">
@@ -1024,6 +1076,24 @@ function filterProjects(cat) {
 }
 
 const modalData = {
+    malwares: {
+        title: "🛡️ MalwaresInspector — AI-Powered Malware Detection Command Center",
+        content: `
+            <p><strong>Contexte &amp; Démarche Scientifique :</strong><br>
+            Face à la sophistication des menaces informatiques (malwares polymorphes et attaques zero-day), les signatures antivirus traditionnelles basées sur les hachages SHA256 sont rapidement contournées. J'ai conçu et entraîné un modèle de <strong>Deep Learning</strong> capable d'analyser la structure interne des fichiers binaires pour classifier instantanément les logiciels malveillants.</p>
+            <br>
+            <p><strong>Architecture du Modèle &amp; Entraînement :</strong><br>
+            • <strong>Fine-Tuning VGG-16 :</strong> Réseau de neurones convolutif profond (CNN) initialement pré-entraîné, puis adapté et fine-tuné sur un corpus de binaires malveillants et sains convertis en matrices d'octets / représentations visuelles.<br>
+            • <strong>Optimisation TensorFlow Lite (ai-edge-litert) :</strong> Quantization et conversion du modèle en format <code>vgg16_fine.tflite</code> compact, réduisant le poids mémoire et permettant une inférence temps-réel (&lt; 150ms) sur conteneur serverless Vercel sans GPU dédié.<br>
+            • <strong>Pipeline Backend Python :</strong> Traitement des flux de fichiers multipart, extraction de features matricielles avec NumPy &amp; Pillow, et scoring probabiliste de menace.</p>
+            <br>
+            <p><strong>Stack Technique :</strong> Python, TensorFlow, Keras, VGG-16 CNN, ai-edge-litert (TFLite), Flask WSGI, Pillow, NumPy, Tailwind CSS, Vercel Serverless.</p>
+            <br>
+            <p><strong>Liens Directs :</strong><br>
+            • Démo Live : <a href="https://malwares-detector.vercel.app/" target="_blank" style="color: #34d399; font-weight: 700;">https://malwares-detector.vercel.app/ ↗</a><br>
+            • Dépôt GitHub : <a href="https://github.com/slimanix/MalwersDetector" target="_blank" style="color: #60a5fa; font-weight: 700;">github.com/slimanix/MalwersDetector ↗</a></p>
+        `
+    },
     ops: {
         title: "📊 Customer Operations & SLA Incident Intelligence Hub",
         content: `
